@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class SearchForm extends Component {
   render() {
     return(
-      <div>
+      <section>
         <h1>Search the Collection</h1>
         <form
           onSubmit={this.props.handleSubmit}
@@ -40,7 +40,7 @@ class SearchForm extends Component {
               </div>
               )
           })}
-      </div>
+      </section>
 
     )
   }
