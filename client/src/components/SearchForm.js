@@ -19,7 +19,7 @@ class SearchForm extends Component {
         {this.props.objects.map((object) => {
           console.log(object);
             return(
-              <div className='imgSearchedWraper'>
+              <div>
                 <h3><a href={object.url} target='_blank'>{object.title}</a></h3>
                 {object.images.map((img) => {
                   return(
