@@ -4,7 +4,10 @@
   "description": "An application that uses the Cooper Hewitt api to facilitate visits to the museum by checking exhibitions and locating artwork or objects in the collection ahead of time. This project is part of the WDI/NYC-TTP Fellowship requirements.",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "dev": "nodemon",
+    "debug": "nodemon --inspect"
   },
   "repository": {
     "type": "git",
