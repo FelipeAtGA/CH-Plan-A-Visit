@@ -7,7 +7,8 @@ import { Route, Redirect, Switch } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import SearchForm from './components/SearchForm';
-import CurrentExhibitions from './components/CurrentExhibitions'
+import CurrentExhibitions from './components/CurrentExhibitions';
+import ShowAlldb from './components/ShowAlldb';
 
 
 class App extends Component {
@@ -41,8 +42,9 @@ class App extends Component {
     axios('http://localhost:3001/api/planner')
     .then((res) => {
       this.setState((prevState) => {
+        console.log('didMount all ', res.data.data.items)
         return{
-          dbItems: res.data.data.data.items,
+          dbItems: res.data.data.items,
         }
       })
     })
