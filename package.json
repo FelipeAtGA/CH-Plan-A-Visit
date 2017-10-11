@@ -1,0 +1,23 @@
+{
+  "name": "CH-Plan-A-Visit",
+  "version": "1.0.0",
+  "description": "An application that uses the Cooper Hewitt api to facilitate visits to the museum by checking exhibitions and locating artwork or objects in the collection ahead of time. This project is part of the WDI/NYC-TTP Fellowship requirements.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FelipeAtGA/CH-Plan-A-Visit.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FelipeAtGA/CH-Plan-A-Visit/issues"
+  },
+  "homepage": "https://github.com/FelipeAtGA/CH-Plan-A-Visit#readme",
+  "dependencies": {
+    "express": "^4.16.2"
+  }
+}
