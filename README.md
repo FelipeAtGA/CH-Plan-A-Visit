@@ -49,6 +49,19 @@ Time-priority matrix
 --------------------
 ![Tiem-priority matrix](https://github.com/FelipeAtGA/Project4-Museum-visitor-planner/blob/master/readme_images/time-priority-matirx.png)
 
+MVP
+-------------
+* Utilizing a third party API
+* Full RESTful/CRUD performance
+* CSS styling
+
+Post MVP
+-------------
+* User Auth Docs
+* Build a visit album
+* Include museum map
+* Print users' posts
+
 Project board
 -------------
 | Taks                          | Date  | Estimated time| Actual |
@@ -63,9 +76,8 @@ Project board
 | Build add-one funct. and page | 10/08 | 3hrs          |2.5hrs  |
 | Build delete-one funct. + page| 10/08 | 3hrs          |        |
 | Build update-one funct. + form| 10/08 | 3hrs          |        |
-| Set up react app              | 10/09 | 1hr           |        |
 | Create list-all component     | 10/09 | 1hr           |        |
 | Create list-one component     | 10/09 | 1hr           |        |
 | Create update/edit form       | 10/09 | 1hr           |        |
-| Auth Docs and setting up      | 10/09 | 4hrs          |        |
-| Debbuging                     | 10/10 | 8hrs          |        |
+| Debbuging                     | 10/09 | 4hrs          |        |
+| Auth Docs                     | 10/10 | 8hrs          |        |
