@@ -10,7 +10,9 @@ const controller = require('../controllers/dbController');
 // use an instance of router for the following calls
 const visitPlanRouter = express.Router();
 
-
-visitPlanRouter.route('/').post(controller.create);
+//visitPlanRouter.route('/:id').get(controller.getOne);
+visitPlanRouter.route('/')
+  .get(controller.index)
+  .post(controller.create);
 
 module.exports = visitPlanRouter;
