@@ -23,6 +23,9 @@ app.use(bodyParser.urlencoded({ extended: false, }));
 
 //================= SETTING ROUTES ==================== //
 
+// open route to db
+const visitPlan = require('./routes/visitorPlanner');
+app.use('/api/planner', visitPlan);
 
 // set app to the root
 app.get('/', function (req, res) {
