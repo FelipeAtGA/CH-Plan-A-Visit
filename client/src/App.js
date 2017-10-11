@@ -17,6 +17,7 @@ class App extends Component {
       exhibits: [],
       objects: [],
       inputSearchValue: '',
+      dbItems: [],
 
     }
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -36,6 +37,15 @@ class App extends Component {
     }).catch((err) => {
       console.log(err)
     });
+
+    axios('http://localhost:3001/api/planner')
+    .then((res) => {
+      this.setState((prevState) => {
+        return{
+          dbItems: res.data.data.data.items,
+        }
+      })
+    })
   }
 
   handleInputSearchOnCahnge(event) {
