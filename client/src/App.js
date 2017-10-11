@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
 import axios from 'axios';
+import { Route, Redirect, Switch } from 'react-router-dom';
+
 
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -12,7 +14,7 @@ class App extends Component {
     super(props);
     this.state = {
       exhibits: [],
-      objects: [];
+      objects: [],
       inputSearchValue: '',
 
     }
