@@ -111,6 +111,11 @@ class App extends Component {
               objects={ this.state.objects }
             />}
           />
+          <Route exact path='/allItems'
+            render={(props) => <ShowAlldb
+              dbItems={ this.state.dbItems }
+              />}
+          />
         </Switch>
         <Footer />
       </div>
