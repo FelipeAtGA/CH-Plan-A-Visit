@@ -20,6 +20,7 @@ class App extends Component {
     }
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleInputSearchOnCahnge = this.handleInputSearchOnCahnge.bind(this);
+    this.handleAddItem = this.handleAddItem.bind(this);
   }
 
   componentDidMount() {
@@ -65,6 +66,20 @@ class App extends Component {
     });
   }
 
+  handleAddItem(titleExh, urlImg, urlExh) {
+    console.log('handleAddItem', titleExh, urlExh);
+    const addItem = {
+      title: titleExh,
+      img_url: urlImg,
+      exhibit_url: urlExh,
+    }
+
+    axios.post('http://localhost:3001/api/planner', addItem)
+    .then((res) => {
+      console.log('inside axios post ', res);
+    }).catch(err => console.log(err));
+  }
+
   render() {
     return (
       <div className="App">
@@ -74,6 +89,7 @@ class App extends Component {
             render={(props) => <SearchForm
               handleSubmit={this.handleSubmit}
               inputSearchValue={ this.state.inputSearchValue }
+              handleAddItem={ this.handleAddItem }
               handleInputSearchOnCahnge={ this.handleInputSearchOnCahnge }
               objects={ this.state.objects }
             />}
