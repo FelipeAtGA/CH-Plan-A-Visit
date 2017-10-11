@@ -11,7 +11,7 @@ class CurrentExhibitons extends Component {
               if( exhibit.is_active === '1'){
                 return(
                   <tr>
-                    <td>
+                    <td key={ parseInt(exhibit.id, 10) } >
                       <h3>{ exhibit.title }</h3>
                     </td>
                     <td>
