@@ -2,6 +2,12 @@ const db = require('../db/config');
 
 const visitPlan = {};
 
+visitPlan.findAll = () => {
+  return db.query(
+    `SELECT * FROM products`
+  );
+};
+
 visitPlan.create = (item) => {
   return db.one(
     `
