@@ -54,13 +54,13 @@ Project board
 | Taks                          | Date  | Estimated time| Actual |
 | -------------                 |:-----:| :------------:|:------:|
 | API: find, read Docs, and Test| 10/06 | 3hrs          |On time |
-| Create GitHub Repo w/ read.me | 10/06 | 2hrs          |3hr     |
-| Express/React review Docs     | 10/07 | 4hrs          |4hr     |
+| Create GitHub Repo w/ read.me | 10/06 | 2hrs          |3hrs    |
+| Express/React review Docs     | 10/07 | 4hrs          |4hrs    |
 | express skeleton              | 10/07 | 2hrs          |1hr     |
 | React skeleton                | 10/07 | 2hrs          |1hr     |
 | Build DB                      | 10/08 | 2hrs          |1hr     |
-| Create Search form, using API | 10/08 | 3hrs          |        |
-| Build add-one funct. and page | 10/08 | 3hrs          |        |
+| Create Search form, using API | 10/08 | 3hrs          |2.5hrs  |
+| Build add-one funct. and page | 10/08 | 3hrs          |2.5hrs  |
 | Build delete-one funct. + page| 10/08 | 3hrs          |        |
 | Build update-one funct. + form| 10/08 | 3hrs          |        |
 | Set up react app              | 10/09 | 1hr           |        |
