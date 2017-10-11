@@ -52,7 +52,7 @@ Time-priority matrix
 MVP
 -------------
 * Utilizing a third party API
-* Full RESTful/CRUD performance
+* Full ReST/CRUD performance
 * CSS styling
 
 Post MVP
