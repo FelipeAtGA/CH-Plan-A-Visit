@@ -7,6 +7,7 @@ import { Route, Redirect, Switch } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import SearchForm from './components/SearchForm';
+import CurrentExhibitions from './components/CurrentExhibitions'
 
 
 class App extends Component {
@@ -70,6 +71,12 @@ class App extends Component {
       <div className="App">
         <Header />
         <Switch>
+          <Route exact path='/current'
+            render={(props) => <CurrentExhibitions
+              exhibits={ this.state.exhibits }
+              />
+            }
+          />
           <Route exact path='/search'
             render={(props) => <SearchForm
               handleSubmit={this.handleSubmit}
