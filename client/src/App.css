@@ -49,6 +49,12 @@
 
  }
 
+ .imgSearchedWraper{
+  width: 15%;
+  margin: 25px;
+  display: inline-block;
+}
+
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
