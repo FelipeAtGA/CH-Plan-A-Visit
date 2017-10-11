@@ -17,7 +17,6 @@ class SearchForm extends Component {
           <button id='submit'>Search</button>
         </form>
         {this.props.objects.map((object) => {
-          console.log(object);
             return(
               <div>
                 <h3><a href={object.url} target='_blank'>{object.title}</a></h3>
