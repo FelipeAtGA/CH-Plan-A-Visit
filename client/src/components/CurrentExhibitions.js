@@ -10,3 +10,5 @@ class CurrentExhibitons extends Component {
     )
   }
 }
+
+export default CurrentExhibitons;
