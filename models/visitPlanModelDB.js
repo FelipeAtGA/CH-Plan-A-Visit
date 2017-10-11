@@ -4,7 +4,7 @@ const visitPlan = {};
 
 visitPlan.findAll = () => {
   return db.query(
-    `SELECT * FROM products`
+    `SELECT * FROM items`
   );
 };
 
