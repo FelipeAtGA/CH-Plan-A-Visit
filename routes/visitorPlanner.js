@@ -11,6 +11,7 @@ const controller = require('../controllers/dbController');
 const visitPlanRouter = express.Router();
 
 visitPlanRouter.route('/:id')
+  .put(controller.update)
   .delete(controller.delete);
 
 visitPlanRouter.route('/')
