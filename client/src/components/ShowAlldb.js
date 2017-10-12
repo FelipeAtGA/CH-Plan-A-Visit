@@ -6,8 +6,23 @@ class ShowAlldb extends Component {
     return(
       <section>
         <h1>List of your items</h1>
+        <table>
+          <tbody>
+          {this.props.dbItems.map((dbItem) => {
+              return(
+                <tr>
+                  <td className='imgSearchedWraper'>
+                   <img width='100%' src={dbItem.img_url} alt='one list item from all' />
+                  </td>
+                  <td className='showAllTitles'>
+                    <h3><a href={dbItem.exhibit_url} target='_blank'>{ dbItem.title }</a></h3>
+                  </td>
+                </tr>
+              )}
+            )}
+          </tbody>
+        </table>
       </section>
-
     )
   }
 }
