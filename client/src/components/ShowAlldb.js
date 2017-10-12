@@ -1,14 +1,35 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 
 class ShowAlldb extends Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      dbItems: [],
+
+    }
+  }
+
+  componentDidMount() {
+    axios('http://localhost:3001/api/planner')
+    .then((res) => {
+      this.setState((prevState) => {
+        console.log('didMount all ', res.data.data.items)
+        return{
+          dbItems: res.data.data.items,
+        }
+      })
+    })
+  }
+
   render() {
-    console.log('ShowAlldb data ', this.props.dbItems)
+    console.log('ShowAlldb data ', this.state.dbItems)
     return(
       <section>
         <h1>List of your items</h1>
         <table>
           <tbody>
-          {this.props.dbItems.map((dbItem) => {
+          {this.state.dbItems.map((dbItem) => {
               return(
                 <tr>
                   <td className='imgSearchedWraper'>
