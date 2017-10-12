@@ -57,5 +57,18 @@ visitPlanController.update = (req, res) => {
   .catch((err) => console.log(err));
 };
 
+visitPlanController.show = (req, res) => {
+  visitPlan.findById(req.params.id)
+  .then((item) => {
+    res.json({
+      message: 'ok',
+      data: { item },
+    });
+  })
+  .catch((err) => {
+    res.status(400).json({ message: '400 Not Found', err })
+  });
+}
+
 
 module.exports = visitPlanController;
