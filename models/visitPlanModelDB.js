@@ -18,4 +18,13 @@ visitPlan.create = (item) => {
   );
 };
 
+visitPlan.destroy = (id) => {
+  return db.none(
+    `
+    DELETE FROM items
+    WHERE id = $1
+    `, [id]
+  );
+}
+
 module.exports = visitPlan;
