@@ -31,4 +31,18 @@ visitPlanController.create = (req, res) => {
   });
 };
 
+  visitPlanController.delete = (req, res) => {
+    visitPlan.destroy(req.params.id)
+    .then(() => {
+      res.json({
+        message: 'Item deleted succesfully!',
+      });
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+  };
+
+
 module.exports = visitPlanController;
