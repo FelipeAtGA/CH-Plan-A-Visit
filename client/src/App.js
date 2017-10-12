@@ -25,6 +25,7 @@ class App extends Component {
     this.handleInputSearchOnCahnge = this.handleInputSearchOnCahnge.bind(this);
     this.handleAddItem = this.handleAddItem.bind(this);
     this.handleDeleteItem = this.handleDeleteItem.bind(this);
+    this.addItemToArr = this.addItemToArr.bind(this);
   }
 
   componentDidMount() {
@@ -45,7 +46,7 @@ class App extends Component {
       this.setState((prevState) => {
         console.log('didMount all ', res.data.data.items)
         return{
-          dbItems: res.data.data.items,
+          dbItems: (res.data.data.items).reverse(),
         }
       })
     })
@@ -80,6 +81,16 @@ class App extends Component {
     });
   }
 
+  addItemToArr(res) {
+      let item = res;
+      let oldDbItems = this.state.dbItems;
+      let tempArr = [];
+      oldDbItems.forEach(d => tempArr.push(d));
+      tempArr.push(item);
+      tempArr.reverse();
+      return tempArr;
+  }
+
   handleAddItem(titleExh, urlImg, urlExh) {
     console.log('handleAddItem', titleExh, urlExh);
     const addItem = {
@@ -90,14 +101,7 @@ class App extends Component {
 
     axios.post('http://localhost:3001/api/planner', addItem)
     .then((res) => {
-      console.log('inside axios post ', res);
-      let item = res.data.data.data;
-      let oldDbItems = this.state.dbItems;
-      let tempArr = [];
-      oldDbItems.forEach(d => tempArr.push(d));
-      tempArr.push(item);
-      tempArr.reverse();
-      console.log('this from post ', tempArr)
+      let tempArr = this.addItemToArr(res.data.data.data);
       this.setState({
         dbItems: tempArr,
       })
