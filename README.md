@@ -71,13 +71,12 @@ Project board
 | Express/React review Docs     | 10/07 | 4hrs          |4hrs    |       |
 | Express skeleton              | 10/07 | 2hrs          |1hr     |
 | React skeleton                | 10/07 | 2hrs          |1hr     |
-| Build DB                      | 10/08 | 2hrs          |1hr     |
+| Build DB                      | 10/08 | 2hrs          |3hr     |
 | Create Search form, using API | 10/08 | 3hrs          |2.5hrs  |
-| Build add-one funct. and page | 10/08 | 3hrs          |2.5hrs  |
-| Build delete-one funct. + page| 10/08 | 3hrs          |        |
+| Build add-one funct.          | 10/08 | 3hrs          |2.5hrs  |
+| Build delete-one funct.       | 10/08 | 3hrs          |4hrs    | debugg refreshpage/update state
 | Build update-one funct. + form| 10/08 | 3hrs          |        |
 | Create showAll component      | 10/09 | 1hr           |2.5hrs  |difficulty on updating state |
 | Create showOne component      | 10/09 | 1hr           |        |
-| Create update/edit form       | 10/09 | 1hr           |        |
 | Debbuging                     | 10/09 | 4hrs          |        |
 | Auth Docs                     | 10/10 | 8hrs          |        |
