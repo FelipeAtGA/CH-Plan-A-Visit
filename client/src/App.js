@@ -24,6 +24,7 @@ class App extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleInputSearchOnCahnge = this.handleInputSearchOnCahnge.bind(this);
     this.handleAddItem = this.handleAddItem.bind(this);
+    this.handleDeleteItem = this.handleDeleteItem.bind(this);
   }
 
   componentDidMount() {
@@ -91,6 +92,25 @@ class App extends Component {
     .then((res) => {
       console.log('inside axios post ', res);
     }).catch(err => console.log(err));
+  }
+
+  handleDeleteItem(id) {
+    axios.delete(`http://localhost:3001/api/planner/${id}`)
+    .then((res) => {
+      let dbItems = this.state.dbItems;
+      let newDBitems = [];
+      dbItems.forEach((item) => {
+        if(item.id !== id) {
+          newDBitems.push(item);
+        }
+      });
+      this.setState((prevState) => {
+        return {
+          dbItems: newDBitems,
+        }
+      });
+    })
+    .catch((err) => console.log(err));
   }
 
   render() {
