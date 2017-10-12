@@ -91,6 +91,16 @@ class App extends Component {
     axios.post('http://localhost:3001/api/planner', addItem)
     .then((res) => {
       console.log('inside axios post ', res);
+      let item = res.data.data.data;
+      let oldDbItems = this.state.dbItems;
+      let tempArr = [];
+      oldDbItems.forEach(d => tempArr.push(d));
+      tempArr.push(item);
+      tempArr.reverse();
+      console.log('this from post ', tempArr)
+      this.setState({
+        dbItems: tempArr,
+      })
     }).catch(err => console.log(err));
   }
 
@@ -136,6 +146,7 @@ class App extends Component {
           <Route exact path='/allItems'
             render={(props) => <ShowAlldb
               dbItems={ this.state.dbItems }
+              handleDeleteItem={ this.handleDeleteItem }
               />}
           />
         </Switch>
