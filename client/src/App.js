@@ -140,7 +140,7 @@ class App extends Component {
     this.setState({
       singleItem:item,
     })
-    this.props.history.push('/viewsingleitem/2')
+    this.props.history.push(`/viewsingleitem/${id}`)
   }
 
   render() {
