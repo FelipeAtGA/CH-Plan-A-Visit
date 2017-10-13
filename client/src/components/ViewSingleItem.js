@@ -18,7 +18,7 @@ class ViewSingleItem extends Component {
               <td>
                 <textarea
                   placeholder='Enter your comments'
-                ></textarea>
+                >{single.comment}</textarea>
               </td>
             </tr>
             )})}
