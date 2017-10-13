@@ -13,7 +13,7 @@ class ShowAlldb extends Component {
               <ShowOne
                 dbItem={dbItem}
                 handleDeleteItem={ this.props.handleDeleteItem }
-                handleShowOne={ this.props.handleShowOne}
+                handleViewSingleItem={ this.props.handleViewSingleItem}
               />
             )}
           )}
