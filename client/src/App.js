@@ -180,6 +180,7 @@ class App extends Component {
               />}
           />
           <Route exact path='/allItems/:id' component={ ViewSingleItem } />
+          <Route exact path='/' component={ Home } />
         </Switch>
         <Footer />
       </main>
