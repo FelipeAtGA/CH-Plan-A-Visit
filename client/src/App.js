@@ -147,9 +147,7 @@ class App extends Component {
       return(
        <main className="App">
         <Header />
-          <div>
-            <ViewSingleItem item={ this.state.singleItem } />
-          </div>
+          <ViewSingleItem item={ this.state.singleItem } />
         <Footer />
       </main>
       )
