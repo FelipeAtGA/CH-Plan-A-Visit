@@ -9,7 +9,6 @@ import Footer from './components/Footer';
 import SearchForm from './components/SearchForm';
 import CurrentExhibitions from './components/CurrentExhibitions';
 import ShowAlldb from './components/ShowAlldb';
-import ShowOne from './components/ShowOne';
 import ViewSingleItem from './components/ViewSingleItem';
 
 
