@@ -60,8 +60,8 @@ visitPlanController.update = (req, res) => {
 visitPlanController.show = (req, res) => {
   visitPlan.findById(req.params.id)
   .then((item) => {
+    console.log(item)
     res.json({
-      message: 'ok',
       data: { item },
     });
   })
