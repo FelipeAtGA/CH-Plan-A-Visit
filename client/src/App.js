@@ -10,6 +10,7 @@ import SearchForm from './components/SearchForm';
 import CurrentExhibitions from './components/CurrentExhibitions';
 import ShowAlldb from './components/ShowAlldb';
 import ViewSingleItem from './components/ViewSingleItem';
+import Home from './components/Home';
 
 
 class App extends Component {
@@ -181,6 +182,7 @@ class App extends Component {
           />
           <Route exact path='/allItems/:id' component={ ViewSingleItem } />
           <Route exact path='/' component={ Home } />
+          <Redirect exact path='/' component={ Home } />
         </Switch>
         <Footer />
       </main>
