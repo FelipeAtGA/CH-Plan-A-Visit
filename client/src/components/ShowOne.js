@@ -13,7 +13,7 @@ class ShowOne extends Component{
         <td>
           <button
             onClick={ (id) => {
-              this.props.handleShowOne(this.props.dbItem.id);
+              this.props.handleViewSingleItem(this.props.dbItem.id);
             }}
           >View</button>
         </td>
