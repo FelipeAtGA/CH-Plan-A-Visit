@@ -29,7 +29,7 @@ class App extends Component {
     this.handleAddItem = this.handleAddItem.bind(this);
     this.handleDeleteItem = this.handleDeleteItem.bind(this);
     this.addItemToArr = this.addItemToArr.bind(this);
-    this.handleShowOne = this.handleShowOne.bind(this);
+    this.handleViewSingleItem = this.handleViewSingleItem.bind(this);
   }
 
   componentDidMount() {
@@ -130,7 +130,7 @@ class App extends Component {
     .catch((err) => console.log(err));
   }
 
-  handleShowOne(id) {
+  handleViewSingleItem(id) {
     const item = this.state.dbItems.filter((item) => {
       let viewItem = item.id;
       return( viewItem === id);
@@ -176,7 +176,7 @@ class App extends Component {
             render={(props) => <ShowAlldb
               dbItems={ this.state.dbItems }
               handleDeleteItem={ this.handleDeleteItem }
-              handleShowOne={this.handleShowOne}
+              handleViewSingleItem={this.handleViewSingleItem}
               />}
           />
           <Route exact path='/allItems/:id' component={ ViewSingleItem } />
