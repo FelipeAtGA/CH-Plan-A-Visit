@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import axios from 'axios';
-import { Route, Redirect, Switch } from 'react-router-dom';
+import { Route, Redirect, Switch, withRouter } from 'react-router-dom';
 
 
 import Header from './components/Header';
@@ -22,7 +22,7 @@ class App extends Component {
       inputSearchValue: '',
       dbItems: [],
       isViewItem: false,
-      singleItem: {},
+      singleItem: [],
 
     }
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -132,17 +132,19 @@ class App extends Component {
   }
 
   handleViewSingleItem(id) {
+    console.log('handleViewSingleItem ', id);
     const item = this.state.dbItems.filter((item) => {
       let viewItem = item.id;
       return( viewItem === id);
     });
     this.setState({
-      isViewItem: true,
       singleItem:item,
     })
+    this.props.history.push('/viewsingleitem/2')
   }
 
   render() {
+    console.log('singleItem', this.state.singleItem);
     if(this.state.isViewItem) {
       return(
        <main className="App">
@@ -178,9 +180,10 @@ class App extends Component {
               handleViewSingleItem={this.handleViewSingleItem}
               />}
           />
-          <Route exact path='/allItems/:id' component={ ViewSingleItem } />
+          <Route exact path='/viewsingleitem/:id'
+            render={(props) => <ViewSingleItem viewItem={ this.state.singleItem } /> } />
           <Route exact path='/' component={ Home } />
-          <Redirect exact path='/' component={ Home } />
+          <Redirect to='/' component={ Home } />
         </Switch>
         <Footer />
       </main>
@@ -188,4 +191,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default withRouter(App);
