@@ -9,6 +9,8 @@ import Footer from './components/Footer';
 import SearchForm from './components/SearchForm';
 import CurrentExhibitions from './components/CurrentExhibitions';
 import ShowAlldb from './components/ShowAlldb';
+import ShowOne from './components/ShowOne';
+import ViewSingleItem from './components/ViewSingleItem';
 
 
 class App extends Component {
@@ -19,6 +21,8 @@ class App extends Component {
       objects: [],
       inputSearchValue: '',
       dbItems: [],
+      isViewItem: false,
+      singleItem: {},
 
     }
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -26,6 +30,7 @@ class App extends Component {
     this.handleAddItem = this.handleAddItem.bind(this);
     this.handleDeleteItem = this.handleDeleteItem.bind(this);
     this.addItemToArr = this.addItemToArr.bind(this);
+    this.handleShowOne = this.handleShowOne.bind(this);
   }
 
   componentDidMount() {
@@ -86,8 +91,7 @@ class App extends Component {
       let oldDbItems = this.state.dbItems;
       let tempArr = [];
       oldDbItems.forEach(d => tempArr.push(d));
-      tempArr.push(item);
-      tempArr.reverse();
+      tempArr.unshift(item);
       return tempArr;
   }
 
@@ -127,9 +131,31 @@ class App extends Component {
     .catch((err) => console.log(err));
   }
 
+  handleShowOne(id) {
+    const item = this.state.dbItems.filter((item) => {
+      let viewItem = item.id;
+      return( viewItem === id);
+    });
+    this.setState({
+      isViewItem: true,
+      singleItem:item,
+    })
+  }
+
   render() {
+    if(this.state.isViewItem) {
+      return(
+       <main className="App">
+        <Header />
+          <div>
+            <ViewSingleItem item={ this.state.singleItem } />
+          </div>
+        <Footer />
+      </main>
+      )
+    } else {
     return (
-      <div className="App">
+      <main className="App">
         <Header />
         <Switch>
           <Route exact path='/current'
@@ -151,12 +177,14 @@ class App extends Component {
             render={(props) => <ShowAlldb
               dbItems={ this.state.dbItems }
               handleDeleteItem={ this.handleDeleteItem }
+              handleShowOne={this.handleShowOne}
               />}
           />
+          <Route exact path='/allItems/:id' component={ ViewSingleItem } />
         </Switch>
         <Footer />
-      </div>
-    );
+      </main>
+    );}
   }
 }
 
