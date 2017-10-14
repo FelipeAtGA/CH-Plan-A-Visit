@@ -23,6 +23,8 @@ class App extends Component {
       dbItems: [],
       isViewItem: false,
       singleItem: [],
+      addComment: '',
+      inputAddComment: '',
 
     }
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -31,6 +33,8 @@ class App extends Component {
     this.handleDeleteItem = this.handleDeleteItem.bind(this);
     this.addItemToArr = this.addItemToArr.bind(this);
     this.handleViewSingleItem = this.handleViewSingleItem.bind(this);
+    this.handleUpdate = this.handleUpdate.bind(this);
+    this.handleInputSearchOnChangeComment = this.handleInputSearchOnChangeComment.bind(this);
   }
 
   componentDidMount() {
@@ -51,7 +55,7 @@ class App extends Component {
       this.setState((prevState) => {
         console.log('didMount all ', res.data.data.items)
         return{
-          dbItems: (res.data.data.items).reverse(),
+          dbItems: res.data.data.items,
         }
       })
     })
@@ -60,6 +64,12 @@ class App extends Component {
   handleInputSearchOnCahnge(event) {
     this.setState({
       inputSearchValue: event.target.value,
+    })
+  }
+
+  handleInputSearchOnChangeComment(event) {
+    this.setState({
+      inputAddComment: event.target.value,
     })
   }
 
@@ -91,7 +101,7 @@ class App extends Component {
       let oldDbItems = this.state.dbItems;
       let tempArr = [];
       oldDbItems.forEach(d => tempArr.push(d));
-      tempArr.unshift(item);
+      tempArr.push(item);
       return tempArr;
   }
 
@@ -110,6 +120,28 @@ class App extends Component {
         dbItems: tempArr,
       })
     }).catch(err => console.log(err));
+  }
+
+  handleUpdate(id) {
+    console.log('handleUpdate ', this.state.inputAddComment)
+    let obj = {item: this.state.inputAddComment}
+    console.log('obj ', obj)
+    axios.put(`http://localhost:3001/api/planner/${id}`, obj)
+    .then((res) => {
+      let item = res;
+      let oldDbItems = this.state.dbItems;
+      let tempArr = [];
+      oldDbItems.forEach((d) => tempArr.push(d));
+      tempArr.forEach((d) => {
+        if(d.id === item.id){
+          d = item;
+        }
+      })
+      this.setState({
+        dbItems: tempArr,
+      })
+
+    })
   }
 
   handleDeleteItem(id) {
@@ -143,8 +175,10 @@ class App extends Component {
     this.props.history.push(`/viewsingleitem/${id}`)
   }
 
+
+
   render() {
-    console.log('singleItem', this.state.singleItem);
+    console.log('inputAddComment ', this.state.inputAddComment);
     if(this.state.isViewItem) {
       return(
        <main className="App">
@@ -181,7 +215,14 @@ class App extends Component {
               />}
           />
           <Route exact path='/viewsingleitem/:id'
-            render={(props) => <ViewSingleItem viewItem={ this.state.singleItem } /> } />
+            render={(props) => <ViewSingleItem
+              viewItem={ this.state.singleItem }
+              addComment={ this.state.addComment }
+              handleUpdate={ this.handleUpdate }
+              inputAddComment={ this.state.inputAddComment }
+              handleInputSearchOnChangeComment={ this.handleInputSearchOnChangeComment }
+              /> }
+          />
           <Route exact path='/' component={ Home } />
           <Redirect to='/' component={ Home } />
         </Switch>

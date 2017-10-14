@@ -9,6 +9,7 @@ visitPlan.findAll = () => {
 };
 
 visitPlan.create = (item) => {
+  console.log('create ', item);
   return db.one(
     `
     INSERT INTO items ( title, img_url, exhibit_url )
@@ -28,16 +29,15 @@ visitPlan.destroy = (id) => {
 }
 
 visitPlan.update = (item, id) => {
+  console.log('model ', item);
   return db.one(
     `
     UPDATE items SET
-    title = $1,
-    img_url = $2,
-    exhibit_url = $3
-    WHERE id = $4
+    comment = $1
+    WHERE id = $2
     RETURNING *
-    `, [item.title, item.img_url, item.exhibit_url, id]
-  )
+    `, [item.comment, id]
+  );
 }
 
 visitPlan.findById = (id) => {

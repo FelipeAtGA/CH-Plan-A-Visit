@@ -45,13 +45,14 @@ visitPlanController.delete = (req, res) => {
 };
 
 visitPlanController.update = (req, res) => {
+  console.log('controller ', req.body.item);
   visitPlan.update({
     item: req.body.item,
   },req.params.id)
   .then((data) => {
     res.json({
       message: 'Update succesfully',
-      data: data,
+      data: {data},
     });
   })
   .catch((err) => console.log(err));

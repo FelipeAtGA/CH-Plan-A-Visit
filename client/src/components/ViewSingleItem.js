@@ -18,9 +18,25 @@ class ViewSingleItem extends Component {
                 <h3><a href={view.exhibit_url} target='_blank'>{ view.title }</a></h3>
               </td>
               <td>
-                <textarea
-                  placeholder='Enter your comments'
-                >{view.comment}</textarea>
+        <form
+          //onSubmit={this.props.handleUpdate}
+        >
+          <textarea
+            type='text'
+            value={this.props.inputAddComment}
+            placeholder='Enter your comment'
+            onChange={this.props.handleInputSearchOnChangeComment}
+          >{ view.comment }</textarea>
+          <button id='submit'
+                  type='button'
+                  onClick={(id, comment) => {
+                    this.props.handleUpdate(
+                      view.id,
+                      //this.props.inputAddComment,
+                      )}
+                  }
+          >Add comment</button>
+        </form>
               </td>
             </tr>)})}
           </tbody>
