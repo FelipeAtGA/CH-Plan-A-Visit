@@ -189,45 +189,47 @@ class App extends Component {
       )
     } else {
     return (
-      <main className="App">
+      <div>
         <Header />
-        <Switch>
-          <Route exact path='/current'
-            render={(props) => <CurrentExhibitions
-              exhibits={ this.state.exhibits }
-              />
-            }
-          />
-          <Route exact path='/search'
-            render={(props) => <SearchForm
-              handleSubmit={this.handleSubmit}
-              inputSearchValue={ this.state.inputSearchValue }
-              handleAddItem={ this.handleAddItem }
-              handleInputSearchOnCahnge={ this.handleInputSearchOnCahnge }
-              objects={ this.state.objects }
-            />}
-          />
-          <Route exact path='/allItems'
-            render={(props) => <ShowAlldb
-              dbItems={ this.state.dbItems }
-              handleDeleteItem={ this.handleDeleteItem }
-              handleViewSingleItem={this.handleViewSingleItem}
+        <main>
+          <Switch>
+            <Route exact path='/current'
+              render={(props) => <CurrentExhibitions
+                exhibits={ this.state.exhibits }
+                />
+              }
+            />
+            <Route exact path='/search'
+              render={(props) => <SearchForm
+                handleSubmit={this.handleSubmit}
+                inputSearchValue={ this.state.inputSearchValue }
+                handleAddItem={ this.handleAddItem }
+                handleInputSearchOnCahnge={ this.handleInputSearchOnCahnge }
+                objects={ this.state.objects }
               />}
-          />
-          <Route exact path='/viewsingleitem/:id'
-            render={(props) => <ViewSingleItem
-              viewItem={ this.state.singleItem }
-              addComment={ this.state.addComment }
-              handleUpdate={ this.handleUpdate }
-              inputAddComment={ this.state.inputAddComment }
-              handleInputSearchOnChangeComment={ this.handleInputSearchOnChangeComment }
-              /> }
-          />
-          <Route exact path='/' component={ Home } />
-          <Redirect to='/' component={ Home } />
-        </Switch>
+            />
+            <Route exact path='/allItems'
+              render={(props) => <ShowAlldb
+                dbItems={ this.state.dbItems }
+                handleDeleteItem={ this.handleDeleteItem }
+                handleViewSingleItem={this.handleViewSingleItem}
+                />}
+            />
+            <Route exact path='/viewsingleitem/:id'
+              render={(props) => <ViewSingleItem
+                viewItem={ this.state.singleItem }
+                addComment={ this.state.addComment }
+                handleUpdate={ this.handleUpdate }
+                inputAddComment={ this.state.inputAddComment }
+                handleInputSearchOnChangeComment={ this.handleInputSearchOnChangeComment }
+                /> }
+            />
+            <Route exact path='/' component={ Home } />
+            <Redirect to='/' component={ Home } />
+          </Switch>
+        </main>
         <Footer />
-      </main>
+      </div>
     );}
   }
 }
