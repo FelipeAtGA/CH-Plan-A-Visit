@@ -4,8 +4,7 @@ import { Link } from 'react-router-dom';
 class Header extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
+        <header className="App App-header">
           <nav>
             <ul className='nav-menu'>
               <li><Link to='/'><h2>Home</h2></Link></li>
@@ -15,7 +14,6 @@ class Header extends Component {
             </ul>
           </nav>
         </header>
-      </div>
     );
   }
 }
