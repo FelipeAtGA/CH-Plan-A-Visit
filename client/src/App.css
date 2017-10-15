@@ -28,6 +28,10 @@ footer {
 a {
   text-decoration: none;
 }
+
+table {
+  width: 100%;
+}
 /* ============ CLASSES ============= */
 .clearfix:after {
   content: "";
@@ -63,9 +67,9 @@ a {
 }
 
 .main{
-  width: 68%;
+  width: 75%;
   margin: 0 auto;
-  min-height: 74vh;
+  min-height: 70vh;
 }
 
 .title{
@@ -170,6 +174,43 @@ tr.rowColor7{
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
+}
+
+/* ****************** HOME PAGE ************************  */
+.homePageWrapper {
+  display: flex;
+}
+
+.homePageDivs{
+  width: 25%;
+  height: 70vh;
+  background-color: #fff;
+}
+
+.homePageDivs h2{
+  display: inline-block;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 5px;
+  background-color: #000;
+  color: #fff;
+  font-size: 32px;
+}
+
+#column1 {
+  background-image: url("./exhibitions.jpg");
+}
+
+#column2 {
+  background-image: url("./collection.jpg");
+}
+
+#column3 {
+  background-image: url("./items.png");
+}
+
+#column4 {
+  background-image: url("./about2.jpg");
 }
 
 /* ******************  SEARCH FORM ********************* */
