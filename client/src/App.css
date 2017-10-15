@@ -85,19 +85,29 @@ a {
 
  .nav-menu {
   list-style: none;
-  float: left;
+  /* float: left; */
   margin: 0 0 0 250px;
   padding: 0;
+  position: absolute;
+  top: 9px;
  }
 
  .nav-menu li{
   display: inline-block;
   padding:0 10px;
-  margin: 0 20px;
+  margin: 0 30px;
+  width: 150px;
+  text-align: left;
  }
 
  .nav-menu li a {
   color: #fff;
+  text-decoration: none;
+
+ }
+
+ .nav-menu li a h2:hover {
+  color: #ff3399;
   text-decoration: none;
 
  }
