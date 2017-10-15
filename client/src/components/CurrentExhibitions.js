@@ -4,18 +4,23 @@ class CurrentExhibitons extends Component {
   render(){
     return(
       <article>
-        <h1>Current Exhibitions</h1>
+        <h1 className='title'>Current Exhibitions</h1>
         <table>
           <tbody>
-            {this.props.exhibits.map((exhibit) => {
-              if( exhibit.is_active === '1'){
+            {this.props.exhibits.map((exhibit, i) => {
+              if( exhibit.is_active === '1' ){
                 return(
-                  <tr>
-                    <td key={ parseInt(exhibit.id, 10) } >
-                      <h3>{ exhibit.title }</h3>
+                  <tr className={'rowColor' + i}>
+                    <td
+                      key={ parseInt(exhibit.id, 10) }
+                      className='currentExhibitTableCell'
+                    >
+                      <a href={ exhibit.url } target='_black'>
+                       <h3>{ exhibit.title }</h3>
+                      </a>
                     </td>
-                    <td>
-                      <a href={ exhibit.url } target='_black'>view details</a>
+                    <td className='currentExhibitTableCell' >
+                      <a className='linkCurrentExhibitTableCell' href={ exhibit.url } target='_black'>view details</a>
                     </td>
                   </tr>
                 )

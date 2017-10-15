@@ -9,17 +9,21 @@ class SearchForm extends Component {
           onSubmit={this.props.handleSubmit}
         >
           <input
+            className='inputSearchForm'
             type='text'
             value={this.props.inputSearchValue}
             placeholder='Enter your keyword'
             onChange={this.props.handleInputSearchOnCahnge}
           />
-          <button id='submit'>Search</button>
+          <button className='bottonSearchForm' id='submit'>Search</button>
         </form>
         {this.props.objects.map((object) => {
             return(
-              <div>
-                <h3><a href={object.url} target='_blank'>{object.title}</a></h3>
+              <div className='results'>
+              <div className='resultsLeft'>
+                <h3 className='resultsTitle'>
+                  <a href={object.url} target='_blank'>{object.title}</a>
+                </h3>
                 {object.images.map((img) => {
                   return(
                     <div className='imgSearchedWraper'>
@@ -27,7 +31,10 @@ class SearchForm extends Component {
                     </div>
                   )
                 })}
+                </div>
+                <div className='resultsRight'>
                 <button
+                  className='buttonFormAdd'
                   onClick={(itleExh, urlImg, urlExh) => {
                     this.props.handleAddItem(
                       object.title,
@@ -36,6 +43,7 @@ class SearchForm extends Component {
                       )}
                   }
                 >add</button>
+              </div>
               </div>
               )
           })}

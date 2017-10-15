@@ -1,40 +1,39 @@
 import React, { Component } from 'react';
-import './App.css';
 import axios from 'axios';
 import { Route, Redirect, Switch, withRouter } from 'react-router-dom';
+import './App.css';
 
-
-import Header from './components/Header';
-import Footer from './components/Footer';
-import SearchForm from './components/SearchForm';
+/* COMPONENTS */
+import Header             from './components/Header';
+import Footer             from './components/Footer';
+import SearchForm         from './components/SearchForm';
 import CurrentExhibitions from './components/CurrentExhibitions';
-import ShowAlldb from './components/ShowAlldb';
-import ViewSingleItem from './components/ViewSingleItem';
-import Home from './components/Home';
+import ShowAlldb          from './components/ShowAlldb';
+import ViewSingleItem     from './components/ViewSingleItem';
+import Home               from './components/Home';
 
 
 class App extends Component {
   constructor(props){
     super(props);
     this.state = {
-      exhibits: [],
-      objects: [],
+              exhibits: [],
+               objects: [],
       inputSearchValue: '',
-      dbItems: [],
-      isViewItem: false,
-      singleItem: [],
-      addComment: '',
-      inputAddComment: '',
-
+               dbItems: [],
+            isViewItem: false,
+            singleItem: [],
+            addComment: '',
+      binputAddComment: '',
     }
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleInputSearchOnCahnge = this.handleInputSearchOnCahnge.bind(this);
-    this.handleAddItem = this.handleAddItem.bind(this);
-    this.handleDeleteItem = this.handleDeleteItem.bind(this);
-    this.addItemToArr = this.addItemToArr.bind(this);
-    this.handleViewSingleItem = this.handleViewSingleItem.bind(this);
-    this.handleUpdate = this.handleUpdate.bind(this);
-    this.handleInputSearchOnChangeComment = this.handleInputSearchOnChangeComment.bind(this);
+    this.handleSubmit               = this.handleSubmit.bind(this);
+    this.handleInputSearchOnCahnge  = this.handleInputSearchOnCahnge.bind(this);
+    this.handleAddItem              = this.handleAddItem.bind(this);
+    this.handleDeleteItem           = this.handleDeleteItem.bind(this);
+    this.addItemToArr               = this.addItemToArr.bind(this);
+    this.handleViewSingleItem       = this.handleViewSingleItem.bind(this);
+    this.handleUpdate               = this.handleUpdate.bind(this);
+    this.handleInputCommentOnChange = this.handleInputCommentOnChange.bind(this);
   }
 
   componentDidMount() {
@@ -67,7 +66,7 @@ class App extends Component {
     })
   }
 
-  handleInputSearchOnChangeComment(event) {
+  handleInputCommentOnChange(event) {
     this.setState({
       inputAddComment: event.target.value,
     })
@@ -191,7 +190,7 @@ class App extends Component {
     return (
       <div>
         <Header />
-        <main>
+        <main className='main'>
           <Switch>
             <Route exact path='/current'
               render={(props) => <CurrentExhibitions
@@ -221,7 +220,7 @@ class App extends Component {
                 addComment={ this.state.addComment }
                 handleUpdate={ this.handleUpdate }
                 inputAddComment={ this.state.inputAddComment }
-                handleInputSearchOnChangeComment={ this.handleInputSearchOnChangeComment }
+                handleInputCommentOnChange={ this.handleInputCommentOnChange }
                 /> }
             />
             <Route exact path='/' component={ Home } />

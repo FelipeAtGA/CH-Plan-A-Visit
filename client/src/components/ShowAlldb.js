@@ -5,19 +5,22 @@ class ShowAlldb extends Component {
   render() {
     console.log('ShowAlldb data ', this.props.dbItems)
     return(
-      <table>
-        <tbody>
-        {this.props.dbItems.map((dbItem) => {
-            return(
-              <ShowOne
-                dbItem={dbItem}
-                handleDeleteItem={ this.props.handleDeleteItem }
-                handleViewSingleItem={ this.props.handleViewSingleItem}
-              />
+      <article>
+        <h1 className='title'>List of added items</h1>
+        <table>
+          <tbody>
+          {this.props.dbItems.map((dbItem) => {
+              return(
+                <ShowOne
+                  dbItem={dbItem}
+                  handleDeleteItem={ this.props.handleDeleteItem }
+                  handleViewSingleItem={ this.props.handleViewSingleItem}
+                />
+              )}
             )}
-          )}
-        </tbody>
-      </table>
+          </tbody>
+        </table>
+      </article>
     )
   }
 }
