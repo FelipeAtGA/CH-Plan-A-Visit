@@ -14,6 +14,7 @@ body {
   margin:0;
   padding:0;
   height:100%;
+ /* background-image: url("https://uh8yh30l48rpize52xh0q1o6i-wpengine.netdna-ssl.com/wp-content/uploads/2014/06/Mansion-with-wisteria-e1461591200606.jpg"); */
 }
 
 body {
@@ -64,7 +65,7 @@ a {
 .main{
   width: 68%;
   margin: 0 auto;
-  min-height: 545px;
+  min-height: 74vh;
 }
 
 .title{
@@ -296,5 +297,5 @@ tr.rowColor7{
   padding: 0 15px;
   font-size: 16px;
   cursor: pointer;
-  background-color: yellowgreen;
+  /* background-color: yellowgreen; */
 }
