@@ -23,6 +23,7 @@ body {
 
 footer {
   margin-top: 11px;
+  text-align: center;
 }
 
 a {
@@ -53,7 +54,7 @@ table {
 
 .App-header {
   background-color: #000;
-  height: 135px;
+  height: 150px;
   padding: 20px;
   color: white;
 }
@@ -68,8 +69,8 @@ table {
 
 .main{
   width: 75%;
-  margin: 0 auto;
-  min-height: 70vh;
+  margin: 20px auto;
+  min-height: 71vh;
 }
 
 .title{
@@ -77,7 +78,6 @@ table {
 }
 
 .App-footer {
-  background-color: #222;
   height: 20px;
   padding: 20px;
   color: white;
@@ -179,12 +179,14 @@ tr.rowColor7{
 /* ****************** HOME PAGE ************************  */
 .homePageWrapper {
   display: flex;
+  margin-top: 30px;
 }
 
 .homePageDivs{
   width: 25%;
   height: 70vh;
   background-color: #fff;
+  padding: 5px;
 }
 
 .homePageDivs h2{
@@ -192,7 +194,7 @@ tr.rowColor7{
   margin-top: 0;
   margin-bottom: 0;
   padding: 5px;
-  background-color: #000;
+  background-color: rgba(37, 125, 167, .8);
   color: #fff;
   font-size: 32px;
 }
@@ -349,4 +351,65 @@ tr.rowColor7{
   font-size: 16px;
   cursor: pointer;
   /* background-color: yellowgreen; */
+}
+
+/* ***************** ABOUT PAGE ****************** */
+.aboutPageWrapper {
+  display: flex;
+}
+
+.aboutPageDivs{
+  width: 25%;
+  height: 70vh;
+  background-color: #fff;
+}
+
+.aboutPageDivs h2{
+  display: inline-block;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 5px;
+  background-color: #000;
+  color: #fff;
+  font-size: 32px;
+}
+
+.aboutPadding {
+  padding: 15px;
+}
+
+.aboutFontsize {
+  font-size: 18px;
+}
+
+.aboutMargin {
+  margin: 25px;
+}
+
+.hoursOfOp {
+  font-size: 28px;
+}
+
+.aboutTableHeaderAlign {
+  text-align: left;
+}
+
+
+
+
+
+#column1About {
+  background-color: violet;
+}
+
+#column2About {
+  background-color: lightblue;
+}
+
+#column3About {
+  background-color: darkorange;
+}
+
+#column4About {
+  background-color: bisque;
 }
