@@ -45,9 +45,9 @@ visitPlanController.delete = (req, res) => {
 };
 
 visitPlanController.update = (req, res) => {
-  console.log('controller ', req.body.item);
+  console.log('controller ', req.body.comment);
   visitPlan.update({
-    item: req.body.item,
+    comment: req.body.comment,
   },req.params.id)
   .then((data) => {
     res.json({
