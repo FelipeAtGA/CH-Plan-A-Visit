@@ -353,6 +353,20 @@ tr.rowColor7{
   /* background-color: yellowgreen; */
 }
 
+.imgSearchedWraperSingle {
+  width: 100%;
+  margin: 25px;
+}
+
+.imgSearchedWraperSingle h3 a {
+  font-size: 30px;
+  font-weight: 500;
+  color: #222;
+}
+
+.imgSearchedWraperSingle h3 a:hover {
+  text-decoration: underline;
+}
 /* ***************** ABOUT PAGE ****************** */
 .aboutPageWrapper {
   display: flex;
@@ -393,10 +407,6 @@ tr.rowColor7{
 .aboutTableHeaderAlign {
   text-align: left;
 }
-
-
-
-
 
 #column1About {
   background-color: violet;
