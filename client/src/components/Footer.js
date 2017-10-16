@@ -5,7 +5,7 @@ class Footer extends Component {
     return(
       <footer>
         <div className="App-footer">
-          <h6>Made with Love by Felipe Hernandez 2017 </h6>
+          <h6>Made by Felipe Hernandez 2017 </h6>
         </div>
       </footer>
     )
