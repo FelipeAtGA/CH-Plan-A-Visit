@@ -36,6 +36,11 @@ a {
 table {
   width: 100%;
 }
+
+iframe{
+  position: relative;
+  bottom: 0;
+}
 /* ============ CLASSES ============= */
 .clearfix:after {
   content: "";
@@ -404,7 +409,7 @@ tr.rowColor7{
 }
 
 .hoursOfOp {
-  font-size: 28px;
+  font-size: 20px;
 }
 
 .aboutTableHeaderAlign {
