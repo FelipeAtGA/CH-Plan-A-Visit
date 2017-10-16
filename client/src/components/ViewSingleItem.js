@@ -12,11 +12,9 @@ class ViewSingleItem extends Component {
             return(
               <tr>
                 <tr className='listSingle'>
-                  <td className='imgSearchedWraper'>
-                   <img width='100%' src={view.img_url} alt='one list item from all' />
-                  </td>
-                  <td className='showAllTitles listSingleCenterCell'>
+                  <td className='imgSearchedWraperSingle'>
                     <h3><a href={view.exhibit_url} target='_blank'>{ view.title }</a></h3>
+                   <img width='100%' src={view.img_url} alt='one list item from all' />
                   </td>
                 </tr>
                 <tr className='lowerRowSingleItem'>
