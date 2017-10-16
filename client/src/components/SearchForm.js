@@ -4,7 +4,7 @@ class SearchForm extends Component {
   render() {
     return(
       <article>
-        <h1>Search the Collection</h1>
+        <h1 className='title'>Search the Collection</h1>
         <form
           onSubmit={this.props.handleSubmit}
         >

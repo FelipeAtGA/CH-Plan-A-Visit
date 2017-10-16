@@ -4,7 +4,7 @@ class About extends Component {
   render() {
     return (
       <article>
-      <h1>About Hewitt Cooper</h1>
+      <h1 className='title'>About Hewitt Cooper</h1>
       <div className='aboutPageWrapper'>
         <div id="column1About" className='aboutPageDivs'>
           <h2>WHAT'S IN<br/>THE MUSEUM&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h2>

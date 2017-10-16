@@ -6,7 +6,7 @@ class ShowAlldb extends Component {
     console.log('ShowAlldb data ', this.props.dbItems)
     return(
       <article>
-        <h1 className='title'>List of added items</h1>
+        <h1 className='title'>List of added artwork</h1>
         <table>
           <tbody>
           {this.props.dbItems.map((dbItem) => {
