@@ -15,9 +15,9 @@ class Header extends Component {
             <ul className='nav-menu'>
               <li><Link to='/current'><h2>Current Exhibitions</h2></Link></li>
               <li><Link to='/search'><h2>Search the Collection</h2></Link></li>
-              <li><Link to='/allItems'><h2>Saved Items</h2></Link></li>
+              <li><Link to='/allItems'><h2>Saved Artwork</h2></Link></li>
               <li><Link to='/'><h2>Welcome<br />Page</h2></Link></li>
-              <li><Link to='/'><h2>About the<br />Museum</h2></Link></li>
+              <li><Link to='/about'><h2>About the<br />Museum</h2></Link></li>
             </ul>
           </nav>
         </header>
