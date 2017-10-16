@@ -28,15 +28,15 @@ visitPlan.destroy = (id) => {
   );
 }
 
-visitPlan.update = (item, id) => {
-  console.log('model ', item);
+visitPlan.update = (obj, id) => {
+  console.log('model ', obj);
   return db.one(
     `
     UPDATE items SET
     comment = $1
     WHERE id = $2
     RETURNING *
-    `, [item.comment, id]
+    `, [obj.comment, id]
   );
 }
 
