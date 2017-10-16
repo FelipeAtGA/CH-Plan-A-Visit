@@ -25,6 +25,7 @@ class About extends Component {
           <h2>MUSEUM HOURS</h2>
           <h3 className='aboutPadding hoursOfOp'>Weekdays and Sundays,<br />from 10:00 a.m.<br />to 6:00 p.m.</h3>
           <h3 className='aboutPadding hoursOfOp'>Saturdays,<br />from 10:00 a.m.<br />to 9:00 p.m.</h3>
+          <h3 className='aboutPadding hoursOfOp'><a href='https://goo.gl/maps/tCRT7wRbm4B2'>2 E 91st St. New York, NY 10128</a></h3>
         </div>
         <div id="column3About" className='aboutPageDivs'>
           <h2>ADMISSION PRICES</h2>
