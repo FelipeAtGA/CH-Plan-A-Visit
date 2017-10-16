@@ -124,9 +124,9 @@ class App extends Component {
 
   handleUpdate(id) {
     console.log('handleUpdate ', this.state.inputAddComment)
-    let obj = {item: this.state.inputAddComment}
-    console.log('obj ', obj)
-    axios.put(`http://localhost:3001/api/planner/${id}`, obj)
+    let body = {comment: this.state.inputAddComment}
+    console.log('body ', body)
+    axios.put(`http://localhost:3001/api/planner/${id}`, body)
     .then((res) => {
       let item = res;
       let oldDbItems = this.state.dbItems;
