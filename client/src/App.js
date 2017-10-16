@@ -179,15 +179,7 @@ class App extends Component {
 
   render() {
     console.log('inputAddComment ', this.state.inputAddComment);
-    if(this.state.isViewItem) {
-      return(
-       <main className="App">
-        <Header />
-          <ViewSingleItem item={ this.state.singleItem } />
-        <Footer />
-      </main>
-      )
-    } else {
+    console.log('singleItem ', this.state.singleItem);
     return (
       <div>
         <Header />
@@ -234,7 +226,7 @@ class App extends Component {
         </main>
         <Footer />
       </div>
-    );}
+    );
   }
 }
 
