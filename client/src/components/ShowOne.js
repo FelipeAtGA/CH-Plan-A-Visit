@@ -22,7 +22,8 @@ class ShowOne extends Component{
           <button
             className='buttonListDBdelete'
             onClick={ (id) => {
-              this.props.handleDeleteItem(this.props.dbItem.id);
+              if(window.confirm("Are you sure you want to delete this?")){
+              this.props.handleDeleteItem(this.props.dbItem.id);}
             }}
           >Delete</button>
         </td>
