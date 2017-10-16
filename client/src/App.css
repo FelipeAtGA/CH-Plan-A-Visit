@@ -14,6 +14,9 @@ body {
   margin:0;
   padding:0;
   height:100%;
+    background: url('./rombo.png');
+    background-size: 50px 50px;
+    background-repeat: repeat;
  /* background-image: url("https://uh8yh30l48rpize52xh0q1o6i-wpengine.netdna-ssl.com/wp-content/uploads/2014/06/Mansion-with-wisteria-e1461591200606.jpg"); */
 }
 
