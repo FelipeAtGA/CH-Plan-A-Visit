@@ -152,32 +152,36 @@ iframe{
   text-align: center;
 }
 
+.currentExhibitTableCell a h3 {
+  color: #000;
+}
+
 tr.rowColor1{
-  background-color: gold;
+  background-color: #ffc644;
 }
 
 tr.rowColor2{
-  background-color: antiquewhite;
+  background-color: #ff6d58;
 }
 
 tr.rowColor3{
-  background-color: thistle;
+  background-color: #ff127f;
 }
 
 tr.rowColor4{
-  background-color: aqua;
+  background-color: #ff008b;
 }
 
 tr.rowColor5{
-  background-color: darkorange;
+  background-color: #b84b84;
 }
 
 tr.rowColor6{
-  background-color: chartreuse;
+  background-color: #7672bb;
 }
 
 tr.rowColor7{
-  background-color: violet;
+  background-color: #0099da;
 }
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
