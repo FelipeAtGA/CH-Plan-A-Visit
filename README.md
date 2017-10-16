@@ -52,8 +52,8 @@ Time-priority matrix
 MVP
 -------------
 * ~~Utilizing a third party API~~
-* Full ReST/CRUD performance
-* CSS styling
+* ~~Full ReST/CRUD performance~~
+* ~~CSS styling~~
 
 Post MVP
 -------------
@@ -75,8 +75,9 @@ Project board
 | Create Search form, using API | 10/08 | 3hrs          |2.5hrs  |
 | Build add-one funct.          | 10/08 | 3hrs          |2.5hrs  |
 | Build delete-one funct.       | 10/08 | 3hrs          |4hrs    | debugg refreshpage/update state
-| Build update-one funct. + form| 10/08 | 3hrs          |        |
+| Build update-one funct.       | 10/08 | 3hrs          |6hrs    |
 | Create showAll component      | 10/09 | 1hr           |2.5hrs  |difficulty on updating state |
-| Create showOne component      | 10/09 | 1hr           |        |
+| Create showOne component      | 10/09 | 1hr           |2hrs    |
 | Debbuging                     | 10/09 | 4hrs          |        |
-| Auth Docs                     | 10/10 | 8hrs          |        |
+| Auth Docs                     | 10/10 | 8hrs          |0       |No complited for MVP
+| Total                         | 10/15 |               |35hrs ~ |
