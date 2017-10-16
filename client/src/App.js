@@ -11,6 +11,7 @@ import CurrentExhibitions from './components/CurrentExhibitions';
 import ShowAlldb          from './components/ShowAlldb';
 import ViewSingleItem     from './components/ViewSingleItem';
 import Home               from './components/Home';
+import About              from './components/About';
 
 
 class App extends Component {
@@ -222,6 +223,10 @@ class App extends Component {
                 inputAddComment={ this.state.inputAddComment }
                 handleInputCommentOnChange={ this.handleInputCommentOnChange }
                 /> }
+            />
+            <Route exact path='/about'
+              render={(props) => <About
+              />}
             />
             <Route exact path='/' component={ Home } />
             <Redirect to='/' component={ Home } />
