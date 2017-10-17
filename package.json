@@ -9,6 +9,12 @@
     "dev": "nodemon",
     "debug": "nodemon --inspect"
   },
+
+  "engines": {
+    "node": "8.5.0",
+    "npm": "5.3.0"
+  },
+
   "repository": {
     "type": "git",
     "url": "git+https://github.com/FelipeAtGA/CH-Plan-A-Visit.git"
