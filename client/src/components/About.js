@@ -3,8 +3,8 @@ import React, { Component } from 'react';
 class About extends Component {
   render() {
     return (
-      <article>
-      <h1 className='title'>About Hewitt Cooper</h1>
+      <article className='main'>
+      <h1 className='title'>About Cooper Hewitt</h1>
       <div className='aboutPageWrapper'>
         <div id="column1About" className='aboutPageDivs'>
           <h2>WHAT'S IN<br/>THE MUSEUM&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h2>
@@ -25,7 +25,7 @@ class About extends Component {
           <h2>MUSEUM HOURS</h2>
           <h3 className='aboutPadding hoursOfOp'>Weekdays and Sundays,<br />from 10:00 a.m.<br />to 6:00 p.m.</h3>
           <h3 className='aboutPadding hoursOfOp'>Saturdays,<br />from 10:00 a.m.<br />to 9:00 p.m.</h3>
-          <h3 className='aboutPadding hoursOfOp'><a href='https://goo.gl/maps/tCRT7wRbm4B2'>2 E 91st St. New York, NY 10128</a></h3>
+          <h3 className='aboutPadding hoursOfOp'><a href='https://goo.gl/maps/tCRT7wRbm4B2' target="_blank">2 E 91<sup>st</sup>&nbsp; St.<br />New York, NY 10128</a></h3>
         </div>
         <div id="column3About" className='aboutPageDivs'>
           <h2>ADMISSION PRICES</h2>
