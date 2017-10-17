@@ -25,7 +25,7 @@ class App extends Component {
             isViewItem: false,
             singleItem: [],
             addComment: '',
-      binputAddComment: '',
+       inputAddComment: '',
     }
     this.handleSubmit               = this.handleSubmit.bind(this);
     this.handleInputSearchOnCahnge  = this.handleInputSearchOnCahnge.bind(this);
@@ -83,14 +83,20 @@ class App extends Component {
         url +=  keywords
         url += '&description='
         url +=  keywords;
-        //console.log('url', url);
     axios(url)
     .then((res) => {
-      this.setState((prevState) => {
-        return {
-          objects: res.data.objects,
-        }
-      })
+      if(res.data.objects.length === 0){
+        window.alert('No such keywords exit\nPlease enter new keywords');
+        this.setState({
+          inputSearchValue: '',
+        })
+      }else{
+        this.setState((prevState) => {
+          return {
+            objects: res.data.objects,
+          }
+        })
+      }
     }).catch((err) => {
       console.log(err);
     });
@@ -128,17 +134,18 @@ class App extends Component {
     console.log('body ', body)
     axios.put(`http://localhost:3001/api/planner/${id}`, body)
     .then((res) => {
-      let item = res;
-      let oldDbItems = this.state.dbItems;
-      let tempArr = [];
-      oldDbItems.forEach((d) => tempArr.push(d));
-      tempArr.forEach((d) => {
-        if(d.id === item.id){
-          d = item;
-        }
+      let records = this.state.dbItems.map( d => {
+        console.log('res ', res.data.data.data);
+        if(d.id === res.data.data.data.id) {
+          console.log('d ', d)
+          d.comment = res.data.data.data.comment
+          return d;}
+        else { return d }
       })
+      console.log('records ', records);
       this.setState({
-        dbItems: tempArr,
+        dbItems: records,
+        inputAddComment: '',
       })
 
     })
@@ -175,15 +182,11 @@ class App extends Component {
     this.props.history.push(`/viewsingleitem/${id}`)
   }
 
-
-
   render() {
-    console.log('inputAddComment ', this.state.inputAddComment);
-    console.log('singleItem ', this.state.singleItem);
     return (
       <div>
         <Header />
-        <main className='main'>
+        <main>
           <Switch>
             <Route exact path='/current'
               render={(props) => <CurrentExhibitions
