@@ -86,7 +86,7 @@ class App extends Component {
     axios(url)
     .then((res) => {
       if(res.data.objects.length === 0){
-        window.alert('No such keywords exit\nPlease enter new keywords');
+        window.alert('No such keywords exit in the database.\nPlease enter new keywords');
         this.setState({
           inputSearchValue: '',
         })
