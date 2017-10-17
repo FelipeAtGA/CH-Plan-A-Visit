@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 
 class SearchForm extends Component {
   render() {
+    console.log('obj ', this.props.objects)
     return(
-      <article>
+      <article className='main'>
         <h1 className='title'>Search the Collection</h1>
         <form
           onSubmit={this.props.handleSubmit}
@@ -19,14 +20,15 @@ class SearchForm extends Component {
         </form>
         {this.props.objects.map((object) => {
             return(
-              <div className='results'>
+              <div className='results' key={object.id.toString()}>
               <div className='resultsLeft'>
                 <h3 className='resultsTitle'>
                   <a href={object.url} target='_blank'>{object.title}</a>
                 </h3>
-                {object.images.map((img) => {
+                <p className='resultsTitle'>{ object.description }</p>
+                {object.images.map((img, i) => {
                   return(
-                    <div className='imgSearchedWraper'>
+                    <div className='imgSearchedWraper' key={i.toString()}>
                       <img width='100%' src={img.b.url} alt='object searched' />
                     </div>
                   )
