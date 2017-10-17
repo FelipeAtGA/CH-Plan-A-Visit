@@ -1,4 +1,9 @@
 /* ============ HTML TAGs ================= */
+a[target="_blank"]:after {
+    font-family: 'FontAwesome';
+    content: " \f08e";
+}
+
 html {
   height: 100%;
   box-sizing: border-box;
@@ -192,13 +197,23 @@ tr.rowColor7{
 .homePageWrapper {
   display: flex;
   margin-top: 30px;
+  justify-content: space-around;
 }
 
+.homePanelsWrapper {
+  width: 90%;
+  margin: 0 auto;
+}
+ a .homePageDivs:hover{
+  opacity: .6;
+ }
+
 .homePageDivs{
-  width: 25%;
+  width: 300px;
   height: 70vh;
   background-color: #fff;
   padding: 5px;
+  box-shadow: 10px 10px 5px #888888;
 }
 
 .homePageDivs h2{
@@ -362,7 +377,7 @@ tr.rowColor7{
   padding: 0 15px;
   font-size: 16px;
   cursor: pointer;
-  /* background-color: yellowgreen; */
+  background-color: #ffc644;
 }
 
 .imgSearchedWraperSingle {
@@ -379,6 +394,11 @@ tr.rowColor7{
 .imgSearchedWraperSingle h3 a:hover {
   text-decoration: underline;
 }
+
+.comment {
+  font-size: 22px;
+}
+
 /* ***************** ABOUT PAGE ****************** */
 .aboutPageWrapper {
   display: flex;
@@ -386,7 +406,7 @@ tr.rowColor7{
 
 .aboutPageDivs{
   width: 25%;
-  height: 70vh;
+  height: 72vh;
   background-color: #fff;
 }
 
