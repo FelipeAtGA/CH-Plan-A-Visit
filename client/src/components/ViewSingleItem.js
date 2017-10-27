@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 class ViewSingleItem extends Component {
   render() {
-    console.log('viewItem in ViewSingleItem component ', this.props.viewItem);
+    //console.log('viewItem in ViewSingleItem component ', this.props.viewItem);
     return (
       <article className='main'>
         <h1>This your single view</h1>
