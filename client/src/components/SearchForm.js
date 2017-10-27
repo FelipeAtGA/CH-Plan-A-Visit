@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 class SearchForm extends Component {
   render() {
-    console.log('obj ', this.props.objects)
+    //console.log('obj ', this.props.objects)
     return(
       <article className='main'>
         <h1 className='title'>Search the Collection</h1>
