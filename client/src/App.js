@@ -38,7 +38,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    axios('http://localhost:3001/api/museum')
+    axios('/api/museum')
     .then((data) => {
       console.log('axios', data);
       this.setState((prevState) => {
@@ -50,7 +50,7 @@ class App extends Component {
       console.log("museumAPIController error ", err)
     });
 
-    axios('http://localhost:3001/api/db')
+    axios('/api/db')
     .then((res) => {
       this.setState((prevState) => {
         console.log('didMount all ', res.data.data.items)
@@ -119,7 +119,7 @@ class App extends Component {
       exhibit_url: urlExh,
     }
 
-    axios.post('http://localhost:3001/api/db', addItem)
+    axios.post('/api/db', addItem)
     .then((res) => {
       let tempArr = this.addItemToArr(res.data.data.data);
       this.setState({
@@ -132,7 +132,7 @@ class App extends Component {
     console.log('handleUpdate ', this.state.inputAddComment)
     let body = {comment: this.state.inputAddComment}
     console.log('body ', body)
-    axios.put(`http://localhost:3001/api/db/${id}`, body)
+    axios.put(`/api/db/${id}`, body)
     .then((res) => {
       let records = this.state.dbItems.map( d => {
         console.log('res ', res.data.data.data);
@@ -152,7 +152,7 @@ class App extends Component {
   }
 
   handleDeleteItem(id) {
-    axios.delete(`http://localhost:3001/api/db/${id}`)
+    axios.delete(`/api/db/${id}`)
     .then((res) => {
       let dbItems = this.state.dbItems;
       let newDBitems = [];
