@@ -38,16 +38,16 @@ class App extends Component {
   }
 
   componentDidMount() {
-    axios('https://api.collection.cooperhewitt.org/rest/?method=cooperhewitt.exhibitions.getList&access_token=49525b3629ac5bb3d446da768b0305a7&page=1&per_page=10')
-    .then((res) => {
-      console.log('axios', res);
+    axios('http://localhost:3001/api/museum')
+    .then((data) => {
+      console.log('axios', data);
       this.setState((prevState) => {
         return{
-          exhibits: res.data.exhibitions,
+          exhibits: data.data.data,
         }
       })
     }).catch((err) => {
-      console.log(err)
+      console.log("museumAPIController error ", err)
     });
 
     axios('http://localhost:3001/api/db')
