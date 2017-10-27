@@ -7,10 +7,9 @@ class ViewSingleItem extends Component {
       <article className='main'>
         <h1>This your single view</h1>
         <table className='tableSingleItem'>
-          <tbody>
           {this.props.viewItem.map((view) => {
             return(
-              <tr key={ view.id }>
+              <tbody key={ view.id }>
                 <tr className='listSingle'>
                   <td className='imgSearchedWraperSingle'>
                     <h3><a href={view.exhibit_url} target='_blank'>{ view.title }</a></h3>
@@ -44,9 +43,8 @@ class ViewSingleItem extends Component {
                     </form>
                   </td>
                 </tr>
-              </tr>
+              </tbody>
             )})}
-          </tbody>
         </table>
       </article>
     )
