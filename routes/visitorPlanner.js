@@ -21,6 +21,9 @@ visitPlanRouter.route('/db/')
   .get(controller.index)
   .post(controller.create);
 
+visitPlanRouter.route('/museum/search')
+  .get(museumController.search);
+
 visitPlanRouter.route('/museum')
   .get(museumController.index);
 
