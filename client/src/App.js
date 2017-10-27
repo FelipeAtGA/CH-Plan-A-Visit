@@ -40,20 +40,20 @@ class App extends Component {
   componentDidMount() {
     axios('/api/museum')
     .then((data) => {
-      console.log('axios', data);
+      //console.log('axios', data);
       this.setState((prevState) => {
         return{
           exhibits: data.data.data,
         }
       })
     }).catch((err) => {
-      console.log("museumAPIController error ", err)
+      console.log(err)
     });
 
     axios('/api/db')
     .then((res) => {
       this.setState((prevState) => {
-        console.log('didMount all ', res.data.data.items)
+        //console.log('didMount all ', res.data.data.items)
         return{
           dbItems: res.data.data.items,
         }
@@ -110,7 +110,7 @@ class App extends Component {
   }
 
   handleAddItem(titleExh, urlImg, urlExh) {
-    console.log('handleAddItem', titleExh, urlExh);
+    //console.log('handleAddItem', titleExh, urlExh);
     const addItem = {
       title: titleExh,
       img_url: urlImg,
@@ -127,20 +127,20 @@ class App extends Component {
   }
 
   handleUpdate(id) {
-    console.log('handleUpdate ', this.state.inputAddComment)
+    //console.log('handleUpdate ', this.state.inputAddComment)
     let body = {comment: this.state.inputAddComment}
-    console.log('body ', body)
+    //console.log('body ', body)
     axios.put(`/api/db/${id}`, body)
     .then((res) => {
       let records = this.state.dbItems.map( d => {
-        console.log('res ', res.data.data.data);
+        //console.log('res ', res.data.data.data);
         if(d.id === res.data.data.data.id) {
-          console.log('d ', d)
+          //console.log('d ', d)
           d.comment = res.data.data.data.comment
           return d;}
         else { return d }
       })
-      console.log('records ', records);
+      //console.log('records ', records);
       this.setState({
         dbItems: records,
         inputAddComment: '',
@@ -169,7 +169,7 @@ class App extends Component {
   }
 
   handleViewSingleItem(id) {
-    console.log('handleViewSingleItem ', id);
+    //console.log('handleViewSingleItem ', id);
     const item = this.state.dbItems.filter((item) => {
       let viewItem = item.id;
       return( viewItem === id);
