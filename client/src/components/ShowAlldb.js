@@ -3,7 +3,7 @@ import ShowOne from './ShowOne';
 
 class ShowAlldb extends Component {
   render() {
-    console.log('ShowAlldb data ', this.props.dbItems)
+    //console.log('ShowAlldb data ', this.props.dbItems)
     return(
       <article className='main'>
         <h1 className='title'>List of added artwork</h1>
