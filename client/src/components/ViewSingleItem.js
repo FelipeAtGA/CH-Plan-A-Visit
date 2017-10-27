@@ -15,7 +15,7 @@ class ViewSingleItem extends Component {
                   <td className='imgSearchedWraperSingle'>
                     <h3><a href={view.exhibit_url} target='_blank'>{ view.title }</a></h3>
                     <img width='100%' src={view.img_url} alt='one list item from all' />
-                    <p className='comment'><i class="fa fa-quote-left" aria-hidden="true"></i>&nbsp;{ view.comment }&nbsp;<i class="fa fa-quote-right" aria-hidden="true"></i></p>
+                    <p className='comment'><i className="fa fa-quote-left" aria-hidden="true"></i>&nbsp;{ view.comment }&nbsp;<i className="fa fa-quote-right" aria-hidden="true"></i></p>
                   </td>
                 </tr>
                 <tr className='lowerRowSingleItem'>
