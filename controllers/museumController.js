@@ -24,16 +24,9 @@ museumAPIcontroller.search = (req, res) => {
     url +=  req.query.keys;
     axios(url)
     .then((response) => {
-      if(response.data.objects.length === 0){
-        window.alert('No such keywords exit in the database.\nPlease enter new keywords');
-        this.setState({
-          inputSearchValue: '',
-        })
-      }else{
-          res.json({
-            objects: response.data.objects,
-          })
-      }
+      res.json({
+        objects: response.data.objects,
+      })
     }).catch((err) => {
       console.log(err);
     });
