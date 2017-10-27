@@ -4,6 +4,8 @@ const express = require('express');
 // let the file know we are using a controller
 const controller = require('../controllers/dbController');
 
+const museumController = require('../controllers/museumController');
+
 // let the file know that we are using a views controller
 //const views = require('../controllers/viewController');
 
@@ -18,5 +20,8 @@ visitPlanRouter.route('/db/:id')
 visitPlanRouter.route('/db/')
   .get(controller.index)
   .post(controller.create);
+
+visitPlanRouter.route('/museum')
+  .get(museumController.index);
 
 module.exports = visitPlanRouter;
