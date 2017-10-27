@@ -76,14 +76,12 @@ class App extends Component {
   handleSubmit(event) {
     event.preventDefault();
     let keywords = encodeURI(this.state.inputSearchValue);
-    let url = 'https://api.collection.cooperhewitt.org/rest/'
-        url += '?method=cooperhewitt.search.collection&access_token='
-        url += '49525b3629ac5bb3d446da768b0305a7&has_images=1&page=1&per_page=10'
-        url += '&query='
-        url +=  keywords
-        url += '&description='
-        url +=  keywords;
-    axios(url)
+
+    axios('/api/museum/search', {
+      params: {
+        keys: keywords,
+      }
+    })
     .then((res) => {
       if(res.data.objects.length === 0){
         window.alert('No such keywords exit in the database.\nPlease enter new keywords');
