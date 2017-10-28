@@ -161,6 +161,10 @@ iframe{
   color: #000;
 }
 
+tr.rowColor0{
+  background-color: #ffa500;
+}
+
 tr.rowColor1{
   background-color: #ffc644;
 }

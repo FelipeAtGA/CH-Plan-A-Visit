@@ -38,22 +38,22 @@ class App extends Component {
   }
 
   componentDidMount() {
-    axios('https://api.collection.cooperhewitt.org/rest/?method=cooperhewitt.exhibitions.getList&access_token=49525b3629ac5bb3d446da768b0305a7&page=1&per_page=10')
-    .then((res) => {
-      console.log('axios', res);
+    axios('/api/museum')
+    .then((data) => {
+      //console.log('axios', data);
       this.setState((prevState) => {
         return{
-          exhibits: res.data.exhibitions,
+          exhibits: data.data.data,
         }
       })
     }).catch((err) => {
       console.log(err)
     });
 
-    axios('http://localhost:3001/api/planner')
+    axios('/api/db')
     .then((res) => {
       this.setState((prevState) => {
-        console.log('didMount all ', res.data.data.items)
+        //console.log('didMount all ', res.data.data.items)
         return{
           dbItems: res.data.data.items,
         }
@@ -76,17 +76,15 @@ class App extends Component {
   handleSubmit(event) {
     event.preventDefault();
     let keywords = encodeURI(this.state.inputSearchValue);
-    let url = 'https://api.collection.cooperhewitt.org/rest/'
-        url += '?method=cooperhewitt.search.collection&access_token='
-        url += '49525b3629ac5bb3d446da768b0305a7&has_images=1&page=1&per_page=10'
-        url += '&query='
-        url +=  keywords
-        url += '&description='
-        url +=  keywords;
-    axios(url)
+
+    axios('/api/museum/search', {
+      params: {
+        keys: keywords,
+      }
+    })
     .then((res) => {
       if(res.data.objects.length === 0){
-        window.alert('No such keywords exit\nPlease enter new keywords');
+        window.alert('No such keywords exit in the database.\nPlease enter new keywords');
         this.setState({
           inputSearchValue: '',
         })
@@ -112,14 +110,14 @@ class App extends Component {
   }
 
   handleAddItem(titleExh, urlImg, urlExh) {
-    console.log('handleAddItem', titleExh, urlExh);
+    //console.log('handleAddItem', titleExh, urlExh);
     const addItem = {
       title: titleExh,
       img_url: urlImg,
       exhibit_url: urlExh,
     }
 
-    axios.post('http://localhost:3001/api/planner', addItem)
+    axios.post('/api/db', addItem)
     .then((res) => {
       let tempArr = this.addItemToArr(res.data.data.data);
       this.setState({
@@ -129,20 +127,20 @@ class App extends Component {
   }
 
   handleUpdate(id) {
-    console.log('handleUpdate ', this.state.inputAddComment)
+    //console.log('handleUpdate ', this.state.inputAddComment)
     let body = {comment: this.state.inputAddComment}
-    console.log('body ', body)
-    axios.put(`http://localhost:3001/api/planner/${id}`, body)
+    //console.log('body ', body)
+    axios.put(`/api/db/${id}`, body)
     .then((res) => {
       let records = this.state.dbItems.map( d => {
-        console.log('res ', res.data.data.data);
+        //console.log('res ', res.data.data.data);
         if(d.id === res.data.data.data.id) {
-          console.log('d ', d)
+          //console.log('d ', d)
           d.comment = res.data.data.data.comment
           return d;}
         else { return d }
       })
-      console.log('records ', records);
+      //console.log('records ', records);
       this.setState({
         dbItems: records,
         inputAddComment: '',
@@ -152,7 +150,7 @@ class App extends Component {
   }
 
   handleDeleteItem(id) {
-    axios.delete(`http://localhost:3001/api/planner/${id}`)
+    axios.delete(`/api/db/${id}`)
     .then((res) => {
       let dbItems = this.state.dbItems;
       let newDBitems = [];
@@ -171,7 +169,7 @@ class App extends Component {
   }
 
   handleViewSingleItem(id) {
-    console.log('handleViewSingleItem ', id);
+    //console.log('handleViewSingleItem ', id);
     const item = this.state.dbItems.filter((item) => {
       let viewItem = item.id;
       return( viewItem === id);

@@ -27,6 +27,7 @@
   },
   "homepage": "https://github.com/FelipeAtGA/CH-Plan-A-Visit#readme",
   "dependencies": {
+    "axios": "^0.17.0",
     "body-parser": "^1.18.2",
     "cors": "^2.8.4",
     "eslint": "^4.8.0",
