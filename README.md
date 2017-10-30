@@ -1,6 +1,7 @@
 # CH-Plan-A-Visit
 An application that uses the Cooper Hewitt api to facilitate visits to the museum by checking exhibitions and locating artwork or objects in the collection ahead of time. This project is part of the WDI/NYC-TTP Fellowship requirements.
-![Link to live app]https://quiet-reef-82829.herokuapp.com/
+
+![Link to live app](https://quiet-reef-82829.herokuapp.com/)
 
 Index
 -------------------------------------
