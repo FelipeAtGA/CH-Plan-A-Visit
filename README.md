@@ -49,7 +49,7 @@ User stories
 
 Time-priority matrix
 --------------------
-![Tiem-priority matrix](https://github.com/FelipeAtGA/Project4-Museum-visitor-planner/blob/master/readme_images/time-priority-matirx.png)
+![Time-priority matrix](https://github.com/FelipeAtGA/CH-Plan-A-Visit/blob/master/readme_images/time-priority-matirx.png)
 
 MVP
 -------------
