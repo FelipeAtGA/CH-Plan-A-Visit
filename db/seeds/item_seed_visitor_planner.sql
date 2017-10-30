@@ -1,4 +1,4 @@
-\c visitor_palnner
+
 
 INSERT INTO items (title, img_url, exhibit_url, comment)
 VALUES

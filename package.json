@@ -7,8 +7,15 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
     "dev": "nodemon",
-    "debug": "nodemon --inspect"
+    "debug": "nodemon --inspect",
+    "heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build"
   },
+
+  "engines": {
+    "node": "8.5.0",
+    "npm": "5.3.0"
+  },
+
   "repository": {
     "type": "git",
     "url": "git+https://github.com/FelipeAtGA/CH-Plan-A-Visit.git"
