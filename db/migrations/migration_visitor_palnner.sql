@@ -1,4 +1,4 @@
-\c visitor_palnner
+
 
 DROP TABLE IF EXISTS items;
 
