@@ -25,7 +25,7 @@ This application is in development phase, and the project is part of the WDI cur
 
 Wireframes
 ----------
-![Wireframe](https://github.com/FelipeAtGA/Project4-Museum-visitor-planner/blob/master/readme_images/wireframes.png)
+![Wireframe](https://github.com/FelipeAtGA/CH-Plan-A-Visit/blob/master/readme_images/wireframes.png)
 
 Technical specifications
 ------------------------
