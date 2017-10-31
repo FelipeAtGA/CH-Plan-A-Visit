@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express =  require('express'); // bring express library
 const path    = require('path'); // enable file and directory paths
 const app     = express(); // create an instance of express
